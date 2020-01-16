@@ -1,0 +1,31 @@
+- name: Log into private registry
+  docker_login:
+    registry: docker.io/ffxxe/exam2
+    username: "{{ login }}"
+    password: "{{ pass }}"
+    reauthorize: yes
+
+- name: pull an image
+  docker_image:
+    name: ffxxe/exam2:flask
+    source: pull
+
+- name: Add container to networks
+  docker_container:
+    name: "{{ container }}"
+    networks:
+      - name: net_cd
+    ports:
+     - "5000:5000"
+    restart_policy: always
+
+- name: Log out
+  docker_login:
+    state: absent
+
+- name: Add rule to firewall
+  firewalld:
+    zone: public
+    port: 5000/tcp
+    permanent: yes
+    state: enabled

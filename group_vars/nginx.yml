@@ -1,0 +1,4 @@
+nginx_servers:
+  - flask1:5000
+  - flask2:5000
+  - flask3:5000

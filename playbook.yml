@@ -1,0 +1,7 @@
+---
+- name: Homework 33-38
+  hosts: slave
+  user: ec2-user
+
+  roles:
+    - hw33

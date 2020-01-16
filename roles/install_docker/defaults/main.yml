@@ -1,0 +1,10 @@
+---
+dependencies: 
+  - 'yum-utils'
+  - 'device-mapper-persistent-data'
+  - 'lvm2'
+
+docker:
+  - docker-ce
+  - docker-ce-cli
+  - containerd.io

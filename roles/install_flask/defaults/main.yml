@@ -1,0 +1,6 @@
+---
+container: 
+  - 'nginx'
+  - 'flask1'
+  - 'flask2'
+  - 'flask3'
